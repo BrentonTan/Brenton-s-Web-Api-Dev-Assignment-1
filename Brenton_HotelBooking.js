@@ -35,6 +35,12 @@ function amendRoom(roomNo, newDetails = {}) {
     }
 }
 
+function bookRoom(roomNo) {
+    const room = rooms.find(r => r.roomNo === roomNo);
+    if (!room) { return 'Room was not found.'; } // room not found
+    else room[guestStatus] = True;
+}
+
 module.exports = {
     rooms,
     createRoom,
@@ -43,4 +49,5 @@ module.exports = {
     roomDetails,
     amendRoom
 };
+
 
