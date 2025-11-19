@@ -27,7 +27,7 @@ function bookRoom(roomNo) {
     const room = rooms.find(r => r.roomNo === roomNo);
     if (!room) { return 'Room was not found.'; } // room not found
     else { 
-        room[guestStatus] = True;
+        room[guestStatus] = true;
         return 'Room has been booked successfully.';
     }
 }
@@ -53,6 +53,7 @@ module.exports = {
     bookRoom,
     browseRooms
 };
+
 
 
 
