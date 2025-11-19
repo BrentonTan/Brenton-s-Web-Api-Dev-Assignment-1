@@ -14,13 +14,13 @@ function deleteRoom(roomNo) {
 function amendRoom(roomNo, newDetails = {}) {
     const room = rooms.find(r => r.roomNo === roomNo);
     if (!room) return 'Room was not found.'; // room not found
-
     // Update only the fields provided in newDetails
     for (let key in newDetails) {
         if (room.hasOwnProperty(key)) {
             room[key] = newDetails[key];
         }
     }
+    else { return 'Room has been updated.';}
 }
 
 function bookRoom(roomNo) {
@@ -53,6 +53,7 @@ module.exports = {
     bookRoom,
     browseRooms
 };
+
 
 
 
