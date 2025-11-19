@@ -15,4 +15,4 @@ Example: hotel.amendRoom(102, { nightlyRate: 275, bookedStatus: true, amenities:
 Enter room number first, then add in the updated details like shown.
 
 # References
-This is my inspiration page: https://sg.trip.com/?locale=en-sg
+This is my inspiration page: [https://sg.trip.com/?locale=en-sg](https://sg.hotels.com/?locale=en_SG&pos=HCOM_SG&siteid=300000040)
