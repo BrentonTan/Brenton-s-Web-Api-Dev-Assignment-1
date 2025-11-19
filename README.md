@@ -1,12 +1,18 @@
 # Assignment 1
 
-You will only need one file, ie, your node module, for this assignment.
+My Module uses array: rooms to store the values for rooms.
 
-In this readme file, describe how to use your node module. It could be similar to **app.js** from Lab2, where you call some functions in your node module and display the output. Describe how to setup your node module, if any. Describe how to call the functions, what parameters required and so on.
+Function createRoom will create a room and push data type room into the array rooms.
 
-You can press **Ctrl+Shift+V** in this file in Visual Studio Code to see a live preview of the readme file.
+Function deleteRoom will delete a room by room number and returns a boolean based on deletion status.
 
-For some tips in formatting text in readme file, refer to https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+Function retrieveRooms will return all existing room numbers.
+
+Function roomDetails will return the details of a room based on room number.
+
+Function amendRoom will update room details based on room number and the new updated details of the room with key value pairs.
+Example: hotel.amendRoom(102, { nightlyRate: 275, bookedStatus: true, amenities: ["WiFi", "TV", "Mini Bar"] });
+Enter room number first, then add in the updated details like shown.
 
 # References
 This is my inspiration page: https://sg.trip.com/?locale=en-sg
