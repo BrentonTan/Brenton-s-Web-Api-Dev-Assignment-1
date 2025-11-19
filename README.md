@@ -69,6 +69,9 @@ deleteRoom(101);
 
 Updates the fields of an existing room.
 Only fields provided in newDetails will be modified.
+Returns:
+Room has been updated. if successful
+Room was not found. if unsuccessful
 
 Example:
 amendRoom(101, { nightlyRate: 200, roomType: "Premium Deluxe" });
