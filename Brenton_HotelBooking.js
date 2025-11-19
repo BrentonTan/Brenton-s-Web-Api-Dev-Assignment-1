@@ -47,12 +47,12 @@ module.exports = {
     rooms,
     createRoom,
     deleteRoom,
-    retrieveRoomNos,
     roomDetails,
     amendRoom,
     bookRoom,
     browseRooms
 };
+
 
 
 
