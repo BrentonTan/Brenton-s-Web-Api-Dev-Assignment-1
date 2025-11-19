@@ -27,7 +27,7 @@ const {
     bookRoom,
     browseRooms,
     roomDetails
-} = require('./rooms');
+} = require('./Brenton_HotelBooking.js');
 
 ## Data Structure
 
