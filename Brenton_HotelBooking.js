@@ -11,18 +11,6 @@ function deleteRoom(roomNo) {
     return true;
 }
 
-
-function retrieveRooms() {
-    return rooms.map(room => room.roomNo);
-}
-
-function roomDetails(roomNo) {
-    // Find the room with matching roomNo
-    const room = rooms.find(r => r.roomNo === roomNo);
-    if (!room) return 'Room was not found.'; // room not found
-    return room;
-}
-
 function amendRoom(roomNo, newDetails = {}) {
     const room = rooms.find(r => r.roomNo === roomNo);
     if (!room) return 'Room was not found.'; // room not found
@@ -38,16 +26,33 @@ function amendRoom(roomNo, newDetails = {}) {
 function bookRoom(roomNo) {
     const room = rooms.find(r => r.roomNo === roomNo);
     if (!room) { return 'Room was not found.'; } // room not found
-    else room[guestStatus] = True;
+    else { 
+        room[guestStatus] = True;
+        return 'Room has been booked successfully.';
+    }
+}
+
+function browseRooms() {
+    return rooms;
+}
+
+function roomDetails(roomNo) {
+    // Find the room with matching roomNo
+    const room = rooms.find(r => r.roomNo === roomNo);
+    if (!room) return 'Room was not found.'; // room not found
+    return room;
 }
 
 module.exports = {
     rooms,
     createRoom,
     deleteRoom,
-    retrieveRooms,
+    retrieveRoomNos,
     roomDetails,
-    amendRoom
+    amendRoom,
+    bookRoom,
+    browseRooms
 };
+
 
 
