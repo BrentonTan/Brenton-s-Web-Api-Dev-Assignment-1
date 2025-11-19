@@ -7,7 +7,7 @@ function createRoom(roomNo, roomType, nightlyRate, amenities = [], bookedStatus 
 function deleteRoom(roomNo) {
     const index = rooms.findIndex(r => r.roomNo === roomNo);
     if (index === -1) return false;
-    this.rooms.splice(index, 1);
+    rooms.splice(index, 1);
     return true;
 }
 
@@ -43,3 +43,4 @@ module.exports = {
     roomDetails,
     amendRoom
 };
+
