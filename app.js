@@ -32,8 +32,3 @@ console.log(hotel.roomDetails(105));
 hotel.bookRoom(105);
 console.log(hotel.roomDetails(105));
 
-
-//Book a room
-hotel.bookRoom(105);
-console.log(hotel.roomDetails(105));
-
