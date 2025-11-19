@@ -1,4 +1,4 @@
-const hotel = require('./functions/Brenton_HotelBooking.js');
+const hotel = require('./Brenton_HotelBooking.js');
 
 //Create rooms
 hotel.createRoom(101, "Deluxe", 120.00, ["WiFi", "TV"], true);
@@ -14,10 +14,6 @@ console.log(hotel.browseRooms());
 const isDeleted = hotel.deleteRoom(104);
 console.log(isDeleted ? "Room 104 deleted." : "Room 104 not found.");
 
-//Check updated rooms
-const updatedRoom = hotel.retrieveRooms();
-console.log(updatedRoom);
-
 //Check for deleted room
 console.log(hotel.browseRooms());
 
@@ -32,5 +28,12 @@ hotel.amendRoom(102, { nightlyRate: 275, amenities: ["WiFi", "TV", "Mini Bar"] }
 console.log("After update:", hotel.roomDetails(102));
 
 //Book a room
+console.log(hotel.roomDetails(105));
 hotel.bookRoom(105);
 console.log(hotel.roomDetails(105));
+
+
+//Book a room
+hotel.bookRoom(105);
+console.log(hotel.roomDetails(105));
+
