@@ -1,30 +1,47 @@
 # Assignment 1
 
-## Rooms Management Module
+## Hotel Room Booking Module
 
-A simple Node.js module for managing hotel or property rooms.
-This module provides CRUD-style operations for creating, retrieving, updating, and deleting room records, stored in an in-memory array. It’s suitable for small projects, prototypes, or as part of a larger booking system.
+A lightweight Node.js module for managing hotel or property rooms.
+Provides functions for creating, updating, deleting, browsing, booking, and retrieving room information.
+
+This module uses a simple in-memory array (no external database), making it ideal for demos, prototyping, or small applications.
 
 ## Features
 
-Create new rooms
-Delete rooms by room number
-Retrieve all room numbers
-View full room details
-Amend room information
-In-memory storage (no database required)
+Create rooms
+Delete rooms
+Update room information
+Book rooms
+Browse all rooms
+Retrieve specific room details
+In-memory, simple, and easy to extend
 
 ## Installation
-const { 
-    rooms, 
-    createRoom, 
-    deleteRoom, 
-    retrieveRooms, 
-    roomDetails, 
-    amendRoom 
+
+const {
+    rooms,
+    createRoom,
+    deleteRoom,
+    amendRoom,
+    bookRoom,
+    browseRooms,
+    roomDetails
 } = require('./rooms');
 
+## Data Structure
+
+Each room is stored as:
+{
+    roomNo: Number | String,
+    roomType: String,
+    nightlyRate: Number,
+    amenities: Array,
+    bookedStatus: Boolean
+}
+
 ## Module Functions
+
 ### 1. createRoom(roomNo, roomType, nightlyRate, amenities = [], bookedStatus = false)
 
 Creates and stores a new room object.
@@ -48,43 +65,41 @@ false if the room does not exist
 Example:
 deleteRoom(101);
 
-### 3. retrieveRooms()
+### 3. amendRoom(roomNo, newDetails)
 
-Returns an array of all room numbers.
+Updates the fields of an existing room.
+Only fields provided in newDetails will be modified.
 
 Example:
-const list = retrieveRooms();
-// [101, 102, 103]
+amendRoom(101, { nightlyRate: 200, roomType: "Premium Deluxe" });
 
-### 4. roomDetails(roomNo)
+### 4. bookRoom(roomNo)
 
-Retrieves full details of a room.
+Marks a room as booked.
 Returns:
-Room object
-"Room was not found." if it doesn’t exist
+"Room has been booked successfully."
+"Room was not found."
+
+Example:
+bookRoom(101);
+//'Room has been booked successfully.'
+
+### 5. browseRooms()
+
+Returns a full list of all room objects.
+
+Example:
+const allRooms = browseRooms();
+
+### 6. roomDetails(roomNo)
+
+Returns full details for a specific room.
+Returns:
+The room object
+"Room was not found." if the room doesn’t exist
 
 Example:
 roomDetails(101);
-// { roomNo: 101, roomType: "Deluxe", nightlyRate: 150, ... }
-
-### 5. amendRoom(roomNo, newDetails)
-
-Updates specific fields of a room.
-Only keys provided in newDetails will be updated.
-
-Example:
-amendRoom(101, { nightlyRate: 180, bookedStatus: true });
-
-## Data Structure
-
-Each room is stored as:
-{
-    roomNo: Number | String,
-    roomType: String,
-    nightlyRate: Number,
-    amenities: Array,
-    bookedStatus: Boolean
-}
 
 # References
 This is my inspiration page: [https://sg.trip.com/?locale=en-sg](https://sg.hotels.com/?locale=en_SG&pos=HCOM_SG&siteid=300000040)
