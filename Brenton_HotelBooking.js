@@ -20,16 +20,14 @@ function amendRoom(roomNo, newDetails = {}) {
             room[key] = newDetails[key];
         }
     }
-    else { return 'Room has been updated.';}
+    return 'Room has been updated.';
 }
 
 function bookRoom(roomNo) {
     const room = rooms.find(r => r.roomNo === roomNo);
     if (!room) { return 'Room was not found.'; } // room not found
-    else { 
-        room[guestStatus] = true;
-        return 'Room has been booked successfully.';
-    }
+    room[guestStatus] = true;
+    return 'Room has been booked successfully.';
 }
 
 function browseRooms() {
@@ -52,6 +50,7 @@ module.exports = {
     bookRoom,
     browseRooms
 };
+
 
 
 
